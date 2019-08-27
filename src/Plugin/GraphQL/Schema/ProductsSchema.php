@@ -50,15 +50,6 @@ class ProductsSchema extends SdlSchemaPluginBase {
       )
     );
 
-    $registry->addFieldResolver('Product', 'author',
-      $builder->compose(
-        $builder->produce('entity_owner')
-          ->map('entity', $builder->fromParent()),
-        $builder->produce('entity_label')
-          ->map('entity', $builder->fromParent())
-      )
-    );
-
     $registry->addFieldResolver('Product', 'price',
     $builder->produce('property_path')
       ->map('type', $builder->fromValue('entity:node'))
