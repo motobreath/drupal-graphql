@@ -1,0 +1,23 @@
+schema {
+  query: Query
+}
+
+type Query {
+  product(id: Int!): Product
+  products(
+    offset: Int = 0
+    limit: Int = 10
+  ): ProductConnection!
+}
+
+type Product {
+  id: Int!
+  title: String!
+  image: String
+  price: Float
+}
+
+type ProductConnection {
+  total: Int!
+  items: [Product!]
+}

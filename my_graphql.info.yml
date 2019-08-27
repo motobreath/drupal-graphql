@@ -1,0 +1,8 @@
+name: My GraphQL
+type: module
+description: 'My examples.'
+package: GraphQL
+core: 8.x
+dependencies:
+  - graphql:graphql
+  - node:node
